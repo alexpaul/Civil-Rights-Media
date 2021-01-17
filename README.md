@@ -13,6 +13,11 @@ The objective of this curated list of media content is to create and keep an up 
 
 Thanks for your contribution to this project. 
 
+## TODOs
+
+- [ ] Open up access to API.
+- [ ] Add a demo iOS app to this repo showcasing Civil Rights media content. 
+
 ## Curated list of media 
 
 | Movies | Books | Music |
