@@ -6,6 +6,8 @@ A open source list of Civil Rights media.
 
 The objective of this curated list of media content is to create and keep an up to date Web API that allows anyone to make `GET` requests to it and populate a web or mobile application to showcase work and pioneers in the Civil Rights movement. 
 
+![show movies](https://github.com/alexpaul/Civil-Rights-Media/blob/qa/Assets/civil-rights-movies.gif)
+
 ## Contribution 
 
 * You can open an issue and add your media such as book, movie, article, book recommendation relevant to the Civil Rights era. 
