@@ -14,6 +14,7 @@ class MoviesViewController: UIViewController {
   
   private var collectionView: UICollectionView!
   private var dataSource: UICollectionViewDiffableDataSource<Int, Movie>!
+  private var refreshControl: UIRefreshControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +23,7 @@ class MoviesViewController: UIViewController {
     fetchMovies()
   }
   
+  @objc
   private func fetchMovies() {
     let db = Firestore.firestore()
     let collectionName = "movies"
@@ -34,23 +36,30 @@ class MoviesViewController: UIViewController {
         let movies = snapshot.documents.compactMap { try? $0.data(as: Movie.self) }
         dump(movies)
         self?.updateSnapshot(with: movies)
+        self?.refreshControl.endRefreshing()
       }
     }
   }
   
   private func updateSnapshot(with movies: [Movie]) {
     var snapshot = dataSource.snapshot()
+    
+    snapshot.deleteAllItems()
+    
     snapshot.appendSections([0])
     snapshot.appendItems(movies)
     dataSource.apply(snapshot, animatingDifferences: false)
   }
   
   private func configureCollectionView() {
+    refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(fetchMovies), for: .valueChanged)
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
     collectionView.frame = view.bounds
     collectionView.backgroundColor = .systemGroupedBackground
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseIdentifier)
+    collectionView.refreshControl = refreshControl
     view.addSubview(collectionView)
   }
   
