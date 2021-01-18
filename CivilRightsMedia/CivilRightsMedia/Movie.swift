@@ -11,7 +11,7 @@ struct MovieWrapper: Codable {
   let results: [Movie]
 }
 
-struct Movie: Codable {
+struct Movie: Codable, Hashable {
   let adult: Bool
   let backdropPath: String?
   let genreIds: [Int]
@@ -48,6 +48,6 @@ struct Movie: Codable {
     guard let posterPath = posterPath else {
       return "no poster path - use a placeholder image"
     }
-    return "http://image.tmdb.org/t/p/w185/\(posterPath)"
+    return "https://image.tmdb.org/t/p/w185/\(posterPath)"
   }
 }

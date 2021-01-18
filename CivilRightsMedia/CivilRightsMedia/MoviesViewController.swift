@@ -6,23 +6,49 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import Kingfisher
 
 class MoviesViewController: UIViewController {
   
   private var collectionView: UICollectionView!
+  private var dataSource: UICollectionViewDiffableDataSource<Int, Movie>!
   
-  private var dataSource: UICollectionViewDiffableDataSource<Int, Int>!
-
   override func viewDidLoad() {
     super.viewDidLoad()
     configureCollectionView()
     configureDataSource()
+    fetchMovies()
+  }
+  
+  private func fetchMovies() {
+    let db = Firestore.firestore()
+    let collectionName = "movies"
+    
+    db.collection(collectionName).getDocuments { [weak self] (snapshot, error) in
+      if let error = error {
+        print(error)
+      }
+      if let snapshot = snapshot {
+        let movies = snapshot.documents.compactMap { try? $0.data(as: Movie.self) }
+        dump(movies)
+        self?.updateSnapshot(with: movies)
+      }
+    }
+  }
+  
+  private func updateSnapshot(with movies: [Movie]) {
+    var snapshot = dataSource.snapshot()
+    snapshot.appendSections([0])
+    snapshot.appendItems(movies)
+    dataSource.apply(snapshot, animatingDifferences: false)
   }
   
   private func configureCollectionView() {
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
     collectionView.frame = view.bounds
-    collectionView.backgroundColor = .systemBackground
+    collectionView.backgroundColor = .systemGroupedBackground
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseIdentifier)
     view.addSubview(collectionView)
@@ -33,7 +59,6 @@ class MoviesViewController: UIViewController {
       // item
       let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
       let item = NSCollectionLayoutItem(layoutSize: itemSize)
-      
       
       let padding: CGFloat = 10
       item.contentInsets = NSDirectionalEdgeInsets(top: padding, leading: padding, bottom: padding, trailing: padding)
@@ -53,18 +78,14 @@ class MoviesViewController: UIViewController {
   }
   
   private func configureDataSource() {
-    dataSource = UICollectionViewDiffableDataSource<Int, Int>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
+    dataSource = UICollectionViewDiffableDataSource<Int, Movie>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, movie) -> UICollectionViewCell? in
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.reuseIdentifier, for: indexPath) as? MovieCell else {
         fatalError("could not dequeue a MovieCell")
       }
-      cell.backgroundColor = .systemOrange
+      cell.backgroundColor = .systemBackground
+      cell.imageView.kf.setImage(with: URL(string: movie.imageURL))
       return cell
     })
-
-    var snapshot = NSDiffableDataSourceSnapshot<Int, Int>()
-    snapshot.appendSections([0])
-    snapshot.appendItems(Array(1...20))
-    dataSource.apply(snapshot, animatingDifferences: false)
   }
 
 }

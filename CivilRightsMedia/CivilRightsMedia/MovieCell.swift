@@ -13,10 +13,11 @@ import UIKit
 class MovieCell: UICollectionViewCell {
   static let reuseIdentifier = "movieCell"
   
-  public lazy var textLabel: UILabel = {
-    let label = UILabel()
-    label.textAlignment = .center
-    return label
+  public var imageView: UIImageView = {
+    let iv = UIImageView()
+    iv.image = UIImage(systemName: "photo.fill")
+    iv.contentMode = .scaleAspectFit
+    return iv
   }()
   
   override init(frame: CGRect) {
@@ -30,18 +31,19 @@ class MovieCell: UICollectionViewCell {
   }
   
   private func commonInit() {
-    textLabelConstraints()
+    imageViewConstraints()
     layer.cornerRadius = 10
+    layer.masksToBounds = true
   }
   
-  private func textLabelConstraints() {
-    addSubview(textLabel)
-    textLabel.translatesAutoresizingMaskIntoConstraints = false
+  private func imageViewConstraints() {
+    addSubview(imageView)
+    imageView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      textLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-      textLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-      textLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-      textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+      imageView.topAnchor.constraint(equalTo: topAnchor),
+      imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
     ])
   }
   
