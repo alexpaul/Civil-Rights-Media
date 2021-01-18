@@ -15,10 +15,10 @@
 		5791CE3A25B502AC0038A85F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5791CE3825B502AC0038A85F /* LaunchScreen.storyboard */; };
 		5791CE4325B502C00038A85F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CE4225B502C00038A85F /* Movie.swift */; };
 		5791CE4725B506590038A85F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CE4625B506590038A85F /* MovieCell.swift */; };
-		5791CE5A25B50A8E0038A85F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5791CE5925B50A8E0038A85F /* GoogleService-Info.plist */; };
 		5791CE5E25B50F330038A85F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5791CE5D25B50F330038A85F /* Kingfisher */; };
 		5791CE6F25B5D27D0038A85F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CE6E25B5D27D0038A85F /* HeaderView.swift */; };
 		5791CE7425B5F7540038A85F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5791CE7325B5F7540038A85F /* FirebaseDatabase */; };
+		5791CEA525B635A00038A85F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CEA425B6359F0038A85F /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		5791CE3B25B502AC0038A85F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5791CE4225B502C00038A85F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		5791CE4625B506590038A85F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		5791CE5925B50A8E0038A85F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5791CE6E25B5D27D0038A85F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5791CEA425B6359F0038A85F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +71,13 @@
 				5791CE2D25B502AB0038A85F /* AppDelegate.swift */,
 				5791CE2F25B502AB0038A85F /* SceneDelegate.swift */,
 				5791CE4225B502C00038A85F /* Movie.swift */,
+				5791CEA425B6359F0038A85F /* APIClient.swift */,
 				5791CE6E25B5D27D0038A85F /* HeaderView.swift */,
 				5791CE4625B506590038A85F /* MovieCell.swift */,
 				5791CE3125B502AB0038A85F /* MoviesViewController.swift */,
 				5791CE3325B502AB0038A85F /* Main.storyboard */,
 				5791CE3625B502AC0038A85F /* Assets.xcassets */,
 				5791CE3825B502AC0038A85F /* LaunchScreen.storyboard */,
-				5791CE5925B50A8E0038A85F /* GoogleService-Info.plist */,
 				5791CE3B25B502AC0038A85F /* Info.plist */,
 			);
 			path = CivilRightsMedia;
@@ -149,7 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5791CE3A25B502AC0038A85F /* LaunchScreen.storyboard in Resources */,
-				5791CE5A25B50A8E0038A85F /* GoogleService-Info.plist in Resources */,
 				5791CE3725B502AC0038A85F /* Assets.xcassets in Resources */,
 				5791CE3525B502AB0038A85F /* Main.storyboard in Resources */,
 			);
@@ -163,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5791CE3225B502AB0038A85F /* MoviesViewController.swift in Sources */,
+				5791CEA525B635A00038A85F /* APIClient.swift in Sources */,
 				5791CE6F25B5D27D0038A85F /* HeaderView.swift in Sources */,
 				5791CE2E25B502AB0038A85F /* AppDelegate.swift in Sources */,
 				5791CE4325B502C00038A85F /* Movie.swift in Sources */,

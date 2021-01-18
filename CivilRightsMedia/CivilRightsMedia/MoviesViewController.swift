@@ -7,10 +7,10 @@
 
 import UIKit
 import Kingfisher
-import FirebaseDatabase
 
 class MoviesViewController: UIViewController {
   
+  private let apiClient = APIClient()
   private var collectionView: UICollectionView!
   private var dataSource: UICollectionViewDiffableDataSource<Int, Movie>!
   private var refreshControl: UIRefreshControl!
@@ -24,21 +24,17 @@ class MoviesViewController: UIViewController {
   
   @objc
   private func fetchMovies() {
-    let db = Database.database().reference()
-    let collectionName = "movies"
-    
-    db.child(collectionName).observeSingleEvent(of: .value) { [weak self] (snapshot) in
-      var movies = [Movie]()
-      for child in snapshot.children.allObjects as! [DataSnapshot] {
-        if let dict = child.value as? [String: Any],
-           let movie = Movie(dict) {
-          movies.append(movie)
+    apiClient.fetchMovies { [weak self] (result) in
+      switch result {
+      case .failure(let error):
+        print(error)
+      case .success(let movies):
+        self?.updateSnapshot(with: movies)
+        DispatchQueue.main.async {
+          self?.refreshControl.endRefreshing()
         }
       }
-      self?.updateSnapshot(with: movies)
-      self?.refreshControl.endRefreshing()
     }
-    
   }
   
   private func updateSnapshot(with movies: [Movie]) {
@@ -86,7 +82,7 @@ class MoviesViewController: UIViewController {
       
       return section
     }
-  
+    
     // layout
     return layout
   }
@@ -109,6 +105,6 @@ class MoviesViewController: UIViewController {
       return headerView
     }
   }
-
+  
 }
 
