@@ -13,10 +13,21 @@ import UIKit
 class MovieCell: UICollectionViewCell {
   static let reuseIdentifier = "movieCell"
   
+  private let padding: CGFloat = 16
+  
+  public var overviewLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Overview of the movie goes heer."
+    label.font = UIFont.preferredFont(forTextStyle: .headline).withSize(25)
+    label.numberOfLines = 6
+    return label
+  }()
+  
   public var imageView: UIImageView = {
     let iv = UIImageView()
     iv.image = UIImage(systemName: "photo.fill")
     iv.contentMode = .scaleAspectFit
+    iv.backgroundColor = .systemBlue
     return iv
   }()
   
@@ -32,6 +43,7 @@ class MovieCell: UICollectionViewCell {
   
   private func commonInit() {
     imageViewConstraints()
+    overviewLabelConstraints()
     layer.cornerRadius = 10
     layer.masksToBounds = true
   }
@@ -40,10 +52,20 @@ class MovieCell: UICollectionViewCell {
     addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      imageView.topAnchor.constraint(equalTo: topAnchor),
-      imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-      imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
+      imageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+      imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
+      imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+      imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.4)
+    ])
+  }
+  
+  private func overviewLabelConstraints() {
+    addSubview(overviewLabel)
+    overviewLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      overviewLabel.topAnchor.constraint(equalTo: imageView.topAnchor),
+      overviewLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+      overviewLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -padding)
     ])
   }
   

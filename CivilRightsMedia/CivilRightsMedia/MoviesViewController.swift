@@ -73,7 +73,7 @@ class MoviesViewController: UIViewController {
       item.contentInsets = NSDirectionalEdgeInsets(top: padding, leading: padding, bottom: padding, trailing: padding)
       
       // group
-      let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.80))
+      let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(0.60))
       let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
       
       // section
@@ -93,6 +93,7 @@ class MoviesViewController: UIViewController {
       }
       cell.backgroundColor = .systemBackground
       cell.imageView.kf.setImage(with: URL(string: movie.imageURL))
+      cell.overviewLabel.text = movie.overview
       return cell
     })
   }
