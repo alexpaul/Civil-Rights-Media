@@ -19,8 +19,18 @@ Thanks for your contribution to this project.
 
 - [x] Open up access to `civilrights-media` API. `https://civilrights-media-default-rtdb.firebaseio.com/.json`
 - [x] Add a [demo iOS app](https://github.com/alexpaul/Civil-Rights-Media/tree/realtime-database/CivilRightsMedia) to this repo showcasing Civil Rights media content. 
+- [ ] Add more movies 
+- [ ] Start curating and adding books to the API 
+- [ ] Start curating and adding music to the API 
+- [ ] Start curating and adding articles to the API 
+- [ ] Start curating and adding speeches to the API 
+
+## API 
+
+Civil Rights Media API `https://civilrights-media-default-rtdb.firebaseio.com/.json`
 
 ## Resources 
 
 1. [What Are the 50 Best Films About the Civil Rights Movement?](https://www.huffpost.com/entry/what-are-the-50-best-films-about-the-civil-rights-movement_b_587c1d9de4b077a19d180f14)
 2. [IMDB - Civil Rights Movement](https://www.imdb.com/search/keyword/?keywords=civil-rights-movement)
+
