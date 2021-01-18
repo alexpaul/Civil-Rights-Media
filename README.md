@@ -16,7 +16,7 @@ Thanks for your contribution to this project.
 ## TODOs
 
 - [x] Open up access to `movies` API. `https://civilrights-media-default-rtdb.firebaseio.com/.json`
-- [x] Add a demo iOS app to this repo showcasing Civil Rights media content. 
+- [x] Add a [demo iOS app](https://github.com/alexpaul/Civil-Rights-Media/tree/realtime-database/CivilRightsMedia) to this repo showcasing Civil Rights media content. 
 
 ## Curated list of media 
 
