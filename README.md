@@ -8,8 +8,8 @@ The objective of this curated list of media content is to create and keep an up 
 
 ## Contribution 
 
-* You can open an issue and add your media such as book, movie, article, book. 
-* You can also fork this repo make you contribution to the README and make a pull request back to this repo. 
+* You can open an issue and add your media such as book, movie, article, book recommendation relevant to the Civil Rights era. 
+* You can also fork this repo to make you contribution, such as demo web app, iOS app, android app, or other. 
 
 Thanks for your contribution to this project. 
 
