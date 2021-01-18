@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 import Kingfisher
+import FirebaseDatabase
 
 class MoviesViewController: UIViewController {
   
@@ -25,20 +24,21 @@ class MoviesViewController: UIViewController {
   
   @objc
   private func fetchMovies() {
-    let db = Firestore.firestore()
+    let db = Database.database().reference()
     let collectionName = "movies"
     
-    db.collection(collectionName).getDocuments { [weak self] (snapshot, error) in
-      if let error = error {
-        print(error)
+    db.child(collectionName).observeSingleEvent(of: .value) { [weak self] (snapshot) in
+      var movies = [Movie]()
+      for child in snapshot.children.allObjects as! [DataSnapshot] {
+        if let dict = child.value as? [String: Any],
+           let movie = Movie(dict) {
+          movies.append(movie)
+        }
       }
-      if let snapshot = snapshot {
-        let movies = snapshot.documents.compactMap { try? $0.data(as: Movie.self) }
-        dump(movies)
-        self?.updateSnapshot(with: movies)
-        self?.refreshControl.endRefreshing()
-      }
+      self?.updateSnapshot(with: movies)
+      self?.refreshControl.endRefreshing()
     }
+    
   }
   
   private func updateSnapshot(with movies: [Movie]) {

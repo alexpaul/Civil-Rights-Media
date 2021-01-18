@@ -51,3 +51,40 @@ struct Movie: Codable, Hashable {
     return "https://image.tmdb.org/t/p/w185/\(posterPath)"
   }
 }
+
+
+extension Movie {
+  init?(_ dict: [String: Any]) {
+    guard let adult = dict["adult"] as? Bool,
+          let backdropPath = dict["backdropPath"] as? String,
+          let genreIds = dict["genreIds"] as? [Int],
+          let id = dict["id"] as? Int,
+          let originalLanguage = dict["originalLanguage"] as? String,
+          let originalTitle = dict["originalTitle"] as? String,
+          let overview = dict["overview"] as? String,
+          let popularity = dict["popularity"] as? Double,
+          let posterPath = dict["posterPath"] as? String,
+          let releaseDate = dict["releaseDate"] as? String,
+          let title = dict["title"] as? String,
+          let video = dict["video"] as? Bool,
+          let voteAverage = dict["voteAverage"] as? Double,
+          let voteCount = dict["voteCount"] as? Int
+    else {
+      return nil
+    }
+    self.adult = adult
+    self.backdropPath = backdropPath
+    self.genreIds = genreIds
+    self.id = id
+    self.originalLanguage = originalLanguage
+    self.originalTitle = originalTitle
+    self.overview = overview
+    self.popularity = popularity
+    self.posterPath = posterPath
+    self.releaseDate = releaseDate
+    self.title = title
+    self.video = video
+    self.voteAverage = voteAverage
+    self.voteCount = voteCount
+  }
+}

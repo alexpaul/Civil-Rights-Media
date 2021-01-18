@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-import UIKit
-
 class MovieCell: UICollectionViewCell {
   static let reuseIdentifier = "movieCell"
   
