@@ -18,22 +18,6 @@ Thanks for your contribution to this project.
 - [x] Open up access to `movies` API. `https://civilrights-media-default-rtdb.firebaseio.com/.json`
 - [x] Add a [demo iOS app](https://github.com/alexpaul/Civil-Rights-Media/tree/realtime-database/CivilRightsMedia) to this repo showcasing Civil Rights media content. 
 
-## Curated list of media 
-
-| Movies | Books | Music |
-|:-----:|:-------:|:------:|
-| Selma | Where do we go from here, Martin Luther King Jr. | I Wish I Knew (How It Would Feel to Be Free), Nina Simone |
-| Harriet | The Autobiography of Malcolm X | This little light of mine, Sam Cooke |
-| King in the Wilderness | Acroos the bridge, John Lewis | |
-| Hidden Figures | How to be an AntiRacist, Ibram X. Kendi | Selma March, Grant Green |
-| 42 | | |
-| The Banker | | |
-| One night in Miami | | |
-| The Secret life of bees | | |
-| Freedom Riders | | |
-| The Help | | |
-
-
 ## Resources 
 
 1. [What Are the 50 Best Films About the Civil Rights Movement?](https://www.huffpost.com/entry/what-are-the-50-best-films-about-the-civil-rights-movement_b_587c1d9de4b077a19d180f14)
