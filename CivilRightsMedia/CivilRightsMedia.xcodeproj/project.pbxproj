@@ -22,6 +22,7 @@
 		5791CE5325B509370038A85F /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 5791CE5225B509370038A85F /* FirebaseStorageSwift-Beta */; };
 		5791CE5A25B50A8E0038A85F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5791CE5925B50A8E0038A85F /* GoogleService-Info.plist */; };
 		5791CE5E25B50F330038A85F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5791CE5D25B50F330038A85F /* Kingfisher */; };
+		5791CE6F25B5D27D0038A85F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CE6E25B5D27D0038A85F /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5791CE4225B502C00038A85F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		5791CE4625B506590038A85F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		5791CE5925B50A8E0038A85F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5791CE6E25B5D27D0038A85F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				5791CE2D25B502AB0038A85F /* AppDelegate.swift */,
 				5791CE2F25B502AB0038A85F /* SceneDelegate.swift */,
 				5791CE4225B502C00038A85F /* Movie.swift */,
+				5791CE6E25B5D27D0038A85F /* HeaderView.swift */,
 				5791CE4625B506590038A85F /* MovieCell.swift */,
 				5791CE3125B502AB0038A85F /* MoviesViewController.swift */,
 				5791CE3325B502AB0038A85F /* Main.storyboard */,
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5791CE3225B502AB0038A85F /* MoviesViewController.swift in Sources */,
+				5791CE6F25B5D27D0038A85F /* HeaderView.swift in Sources */,
 				5791CE2E25B502AB0038A85F /* AppDelegate.swift in Sources */,
 				5791CE4325B502C00038A85F /* Movie.swift in Sources */,
 				5791CE4725B506590038A85F /* MovieCell.swift in Sources */,

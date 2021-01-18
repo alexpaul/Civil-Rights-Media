@@ -59,6 +59,7 @@ class MoviesViewController: UIViewController {
     collectionView.backgroundColor = .systemGroupedBackground
     collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     collectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseIdentifier)
+    collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.reuseIdentifier)
     collectionView.refreshControl = refreshControl
     view.addSubview(collectionView)
   }
@@ -79,6 +80,10 @@ class MoviesViewController: UIViewController {
       // section
       let section = NSCollectionLayoutSection(group: group)
       
+      let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(500))
+      let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+      section.boundarySupplementaryItems = [header]
+      
       return section
     }
   
@@ -96,6 +101,13 @@ class MoviesViewController: UIViewController {
       cell.overviewLabel.text = movie.overview
       return cell
     })
+    
+    dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+      guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.reuseIdentifier, for: indexPath) as? HeaderView else {
+        fatalError("could not dequeue a HeaderView")
+      }
+      return headerView
+    }
   }
 
 }

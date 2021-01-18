@@ -27,7 +27,6 @@ class MovieCell: UICollectionViewCell {
     let iv = UIImageView()
     iv.image = UIImage(systemName: "photo.fill")
     iv.contentMode = .scaleAspectFit
-    iv.backgroundColor = .systemBlue
     return iv
   }()
   
