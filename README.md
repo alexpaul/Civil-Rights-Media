@@ -36,4 +36,5 @@ Civil Rights Media API `https://civilrights-media-default-rtdb.firebaseio.com/.j
 3. [Amazon - Civil Rights and Liberties](https://www.amazon.com/Best-Sellers-Books-Civil-Rights-Liberties/zgbs/books/10550)
 4. [Civil Rights Movement](https://andrewgoodman.org/civil-rights-movement/?gclid=CjwKCAiAgJWABhArEiwAmNVTB9T7fXCHQbw6M182noAJ16EHCj5-EkHsMQnajIK8z8juVG1FVzJ5dRoCTZ4QAvD_BwE)
 5. [16 Civil Rights Books for the whole family](https://bookriot.com/civil-rights-books/)
+6. [Civil Rights Activists](https://www.biography.com/people/groups/civil-rights-activists)
 
