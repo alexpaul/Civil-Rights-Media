@@ -17,7 +17,6 @@
 		5791CE4725B506590038A85F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CE4625B506590038A85F /* MovieCell.swift */; };
 		5791CE5E25B50F330038A85F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5791CE5D25B50F330038A85F /* Kingfisher */; };
 		5791CE6F25B5D27D0038A85F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CE6E25B5D27D0038A85F /* HeaderView.swift */; };
-		5791CE7425B5F7540038A85F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5791CE7325B5F7540038A85F /* FirebaseDatabase */; };
 		5791CEA525B635A00038A85F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CEA425B6359F0038A85F /* APIClient.swift */; };
 		5791CEAD25B65AF60038A85F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CEAC25B65AF60038A85F /* BaseViewController.swift */; };
 		5791CEB025B65D290038A85F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5791CEAF25B65D290038A85F /* Book.swift */; };
@@ -49,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5791CE7425B5F7540038A85F /* FirebaseDatabase in Frameworks */,
 				5791CE5E25B50F330038A85F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +111,6 @@
 			name = CivilRightsMedia;
 			packageProductDependencies = (
 				5791CE5D25B50F330038A85F /* Kingfisher */,
-				5791CE7325B5F7540038A85F /* FirebaseDatabase */,
 			);
 			productName = CivilRightsMedia;
 			productReference = 5791CE2A25B502AB0038A85F /* CivilRightsMedia.app */;
@@ -144,7 +141,6 @@
 			mainGroup = 5791CE2125B502AB0038A85F;
 			packageReferences = (
 				5791CE5C25B50F330038A85F /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				5791CE7225B5F7540038A85F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 5791CE2B25B502AB0038A85F /* Products */;
 			projectDirPath = "";
@@ -397,14 +393,6 @@
 				minimumVersion = 6.0.1;
 			};
 		};
-		5791CE7225B5F7540038A85F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.4.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -412,11 +400,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5791CE5C25B50F330038A85F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		5791CE7325B5F7540038A85F /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5791CE7225B5F7540038A85F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
