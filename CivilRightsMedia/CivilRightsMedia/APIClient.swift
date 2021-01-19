@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct APIClient {
-  func fetchMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
+struct APIClient<T: Codable> {
+  func fetchMediaItems(completion: @escaping (Result<T, Error>) -> ()) {
     let endpoint = "https://civilrights-media-default-rtdb.firebaseio.com/.json"
     guard let url = URL(string: endpoint) else {
       fatalError("bad url")
@@ -19,9 +19,9 @@ struct APIClient {
       }
       if let data = data {
         do {
-          let results = try JSONDecoder().decode(MovieWrapper.self, from: data)
-          let movies = results.movies.map { $0.value }
-          return completion(.success(movies))
+          let items = try JSONDecoder().decode(T.self, from: data)
+          //let movies = results.movies.map { $0.value }
+          return completion(.success(items))
         } catch {
           return completion(.failure(error))
         }

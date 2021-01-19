@@ -10,9 +10,12 @@ import UIKit
 class HeaderView: UICollectionReusableView {
   static let reuseIdentifier = "headerView"
   
-  public var imageView: UIImageView = {
+  private lazy var images: [UIImage] = [UIImage(named: "mlk")!, UIImage(named: "medgar-evers")!, UIImage(named: "john-lewis")!,
+                                        UIImage(named: "thurgood-marshall")!]
+  
+  public lazy var imageView: UIImageView = {
     let iv = UIImageView()
-    iv.image = #imageLiteral(resourceName: "headerview")
+    iv.image = images.randomElement() ?? UIImage(systemName: "photo")
     iv.contentMode = .scaleAspectFill
     iv.clipsToBounds = true
     return iv
