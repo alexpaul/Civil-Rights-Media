@@ -14,7 +14,7 @@ struct MovieWrapper: Codable {
 struct Movie: Codable, Hashable {
   let adult: Bool
   let backdropPath: String?
-  let genreIds: [Int]
+  let genreIds: [Int]?
   let id: Int
   let originalLanguage: String
   let originalTitle: String
