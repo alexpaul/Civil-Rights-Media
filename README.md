@@ -27,7 +27,9 @@ Thanks for your contribution to this project.
 
 ## API 
 
-Civil Rights Media API `https://civilrights-media-default-rtdb.firebaseio.com/.json`
+Civil Rights Media API `https://civilrights-media-default-rtdb.firebaseio.com/.json`   
+
+Retrieving a photo `"https://image.tmdb.org/t/p/w185/\(posterPath)"`
 
 ## Resources 
 
