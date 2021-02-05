@@ -15,8 +15,8 @@ class MovieCell: UICollectionViewCell {
   public var overviewLabel: UILabel = {
     let label = UILabel()
     label.text = "Overview of the movie goes heer."
-    label.font = UIFont.preferredFont(forTextStyle: .headline).withSize(25)
-    label.numberOfLines = 6
+    label.font = UIFont.preferredFont(forTextStyle: .headline).withSize(18)
+    label.numberOfLines = 0
     return label
   }()
   
@@ -61,7 +61,8 @@ class MovieCell: UICollectionViewCell {
     NSLayoutConstraint.activate([
       overviewLabel.topAnchor.constraint(equalTo: imageView.topAnchor),
       overviewLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
-      overviewLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -padding)
+      overviewLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -padding),
+      overviewLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding)
     ])
   }
   
